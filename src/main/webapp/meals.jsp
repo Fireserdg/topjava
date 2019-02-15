@@ -1,0 +1,16 @@
+<%--
+  Meals
+  User: Sergey Filippov (serdg1984@yandex.ru).
+  Version: 1.0
+  Since: 2019-02-15 
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Meals</title>
+</head>
+<body>
+<h3><a href="index.html">Home</a></h3>
+<h2>Meals</h2>
+</body>
+</html>
