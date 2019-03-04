@@ -45,7 +45,7 @@ public class MealServiceTest {
 
     @Test
     public void delete() throws Exception {
-        service.delete(MEAL_ONE_ID, USER_ID);
+        service.delete(MEAL_ONE_ID, ADMIN_ID);
         assertMatch(service.getAll(ADMIN_ID), TWO_MEAL);
     }
 
