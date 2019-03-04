@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
@@ -16,7 +15,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.assertj.core.api.Java6Assertions.assertThat;
 import static ru.javawebinar.topjava.MealTestData.*;
 import static ru.javawebinar.topjava.UserTestData.*;
 
@@ -75,7 +73,7 @@ public class MealServiceTest {
         assertMatch(service.get(MEAL_ONE_ID, ADMIN_ID), updated);
     }
 
-    @Test(expected = DataIntegrityViolationException.class)
+    @Test(expected = NotFoundException.class)
     public void updateNotFound() throws Exception {
         Meal updated = new Meal(ONE_MEAL);
         updated.setCalories(100);

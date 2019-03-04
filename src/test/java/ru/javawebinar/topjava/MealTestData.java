@@ -2,7 +2,6 @@ package ru.javawebinar.topjava;
 
 
 import ru.javawebinar.topjava.model.Meal;
-import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.util.MealsUtil;
 
 import java.time.LocalDateTime;
@@ -16,6 +15,7 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 import static ru.javawebinar.topjava.UserTestData.ADMIN_ID;
 import static ru.javawebinar.topjava.model.AbstractBaseEntity.START_SEQ;
+import static java.time.LocalDateTime.of;
 
 public class MealTestData {
 
@@ -29,9 +29,9 @@ public class MealTestData {
             .sorted(Comparator.comparing(Meal::getDateTime)
                     .reversed()).collect(Collectors.toList());
 
-    public static final Meal ONE_MEAL = new Meal(MEAL_ONE_ID, LocalDateTime.of(
+    public static final Meal ONE_MEAL = new Meal(MEAL_ONE_ID, of(
             2015, Month.JUNE, 1, 14, 0), "Админ ланч", 510);
-    public static final Meal TWO_MEAL = new Meal(MEAL_TWO_ID,LocalDateTime.of(
+    public static final Meal TWO_MEAL = new Meal(MEAL_TWO_ID, of(
             2015, Month.JUNE, 1, 21, 0), "Админ ужин", 1500);
 
     public static void assertMatch(Meal actual, Meal expected) {
