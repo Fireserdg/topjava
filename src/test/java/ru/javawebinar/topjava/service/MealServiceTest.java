@@ -17,7 +17,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
-import static ru.javawebinar.topjava.TestData.*;
+import static ru.javawebinar.topjava.MealTestData.*;
+import static ru.javawebinar.topjava.UserTestData.*;
 
 @ContextConfiguration({
         "classpath:spring/spring-app.xml",
@@ -93,6 +94,6 @@ public class MealServiceTest {
                 LocalDate.of(2015, 5, 30),
                 LocalDate.of(2015, 5, 30),
                 USER_ID);
-        assertThat(meals).isEqualTo(MEALS_USER);
+        assertMatch(meals, MEALS_USER);
     }
 }

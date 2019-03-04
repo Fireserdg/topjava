@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import static ru.javawebinar.topjava.TestData.*;
+import static ru.javawebinar.topjava.UserTestData.*;
 
 @ContextConfiguration({
         "classpath:spring/spring-app.xml",
